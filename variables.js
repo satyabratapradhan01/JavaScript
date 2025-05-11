@@ -9,4 +9,9 @@ accountEmail = "sonu@gmail.com";
 accountPassword = "112233";
 accountCity = "cuttack";
 
+/*
+prefer not to use var
+because of iissue in block scope and function scope
+*/
+
 console.table([accountId, accountEmail, accountPassword, accountCity]);
