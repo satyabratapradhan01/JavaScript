@@ -31,5 +31,26 @@ function loginUserMessage(username){
     return `${username} just logged in`;
 }
 
-let user = loginUserMessage();
-console.log(user);
+// let user = loginUserMessage();
+// console.log(user);
+
+
+function calculateCartPrice(val1, val2, ...num1){
+    return num1
+}
+
+// let val = calculateCartPrice(10, 20, 30, 40, 50, 60);
+// console.log(val);
+
+const users = {
+    name: "satya",
+    age: 21
+}
+
+function handelObject(anyObject){
+   return `my name ${anyObject.name} and age is ${anyObject.age}`;
+}
+
+console.log(handelObject(users));
+
+
