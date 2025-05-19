@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Background Color Switcher</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+nav {
+  background: #eee;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+nav a {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  color: black;
+  background-color: #f8f8f8;
+}
+
+.canvas {
+  margin-top: 50px;
+}
+
+.button {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+/* Color styles */
+#grey {
+  background-color: grey;
+}
+#white {
+  background-color: white;
+}
+#blue {
+  background-color: blue;
+}
+#yellow {
+  background-color: yellow;
+}
+
+.back-button {
+  display: inline-block;
+  background-color: #fff;
+  padding: 10px 30px;
+  border-radius: 8px;
+  color: #212121;
+  text-decoration: none;
+  border: 2px solid #212121;
+  margin-bottom: 20px;
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" aria-current="page">Home</a>
+  </nav>
+
+  <div class="canvas">
+    <a href="./index.html" class="back-button">Back to Home Page</a>
+
+    <h1>Color Scheme Switcher</h1>
+
+    <span class="button" id="grey"></span>
+    <span class="button" id="white"></span>
+    <span class="button" id="blue"></span>
+    <span class="button" id="yellow"></span>
+
+    <h2>
+      Try clicking on one of the colors above<br />
+      <span>to change the background color of this page!</span>
+    </h2>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.button');
+    const body = document.querySelector('body');
+
+   buttons.forEach(function (button) {
+    console.log(button);
+    button.addEventListener('click', function(e) {
+        console.log(e);
+        console.log(e.target);
+        if(e.target.id === 'grey'){
+            body.style.backgroundColor = e.target.id;
+        }
+        if(e.target.id === 'white'){
+            body.style.backgroundColor = e.target.id;
+        }
+        if(e.target.id === 'blue'){
+            body.style.backgroundColor = e.target.id;
+        }
+        if(e.target.id === 'yellow'){
+            body.style.backgroundColor = e.target.id;
+        }
+    });
+});
+
+  </script>
+</body>
+</html>
