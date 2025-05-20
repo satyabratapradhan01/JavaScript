@@ -23,8 +23,28 @@
     //     alert("owl click");
     // }
 
-    document.querySelector('#owl').addEventListener('click', function(e){
-        alert('owl click again');
+    // attachEvent
+    // jQuery - on
+    //type, timestamp, defaultPrevented
+    //target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX, screenY
+    //altkey, ctrlkey, shiftkey
+
+    document.querySelector('#images').addEventListener('click', function(e){
+       console.log('click inside the ul');
     })
+
+    document.querySelector('#owl').addEventListener('click', function(e){
+        console.log('owl clicked');
+        e.stopPropagation();
+    })
+
+    document.querySelector('#google').addEventListener('click', function(e){
+        e.preventDefault(); 
+        e.stopPropagation();
+        console.log('google clicked')
+    })
+
+
 </script>
 </html>
