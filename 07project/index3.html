@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #111, #222);
+  color: white;
+  text-align: center;
+}
+
+nav {
+  background: #eee;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+nav a {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  color: black;
+  background-color: #f8f8f8;
+}
+
+.center {
+  margin-top: 100px;
+}
+
+#banner {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#clock {
+  background-color: orange;
+  color: black;
+  font-size: 24px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  min-width: 120px;
+  font-weight: bold;
+}
+
+  </style>
+  <title>Local Time Clock</title>
+</head>
+<body>
+  <nav>
+    <a href="/" aria-current="page">Home</a>
+   
+  </nav>
+
+  <div class="center">
+    <div id="banner"><span>Your local time</span></div>
+    <div id="clock"></div>
+  </div>
+
+  <script>
+    const clock = document.querySelector('#clock');
+
+    setInterval(function(){
+        let date = new Date();
+        clock.innerHTML = date.toLocaleTimeString();
+    }, 1000)
+  </script>
+</body>
+</html>
