@@ -30,21 +30,28 @@
     //clientX, clientY, screenX, screenY
     //altkey, ctrlkey, shiftkey
 
+    // document.querySelector('#images').addEventListener('click', function(e){
+    //    console.log('click inside the ul');
+    // })
+
+    // document.querySelector('#owl').addEventListener('click', function(e){
+    //     console.log('owl clicked');
+    //     e.stopPropagation();
+    // })
+
+    // document.querySelector('#google').addEventListener('click', function(e){
+    //     e.preventDefault(); 
+    //     e.stopPropagation();
+    //     console.log('google clicked')
+    // })
+
     document.querySelector('#images').addEventListener('click', function(e){
-       console.log('click inside the ul');
+        console.log(e.target.parentNode);
+        if (e.target.tagName === 'IMG'){
+            let removeIt = e.target.parentNode;
+             removeIt.remove();
+        }
     })
-
-    document.querySelector('#owl').addEventListener('click', function(e){
-        console.log('owl clicked');
-        e.stopPropagation();
-    })
-
-    document.querySelector('#google').addEventListener('click', function(e){
-        e.preventDefault(); 
-        e.stopPropagation();
-        console.log('google clicked')
-    })
-
 
 </script>
 </html>
