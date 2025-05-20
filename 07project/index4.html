@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Number Guessing Game</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #1e1e1e, #333);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    #wrapper {
+      background-color: #444;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .form {
+      margin-top: 20px;
+    }
+
+    .guessField {
+      padding: 10px;
+      width: 80%;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .guessSubmit {
+      background-color: #000;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .guessSubmit:hover {
+      background-color: #222;
+    }
+
+    .resultParas {
+      margin-top: 20px;
+      font-size: 15px;
+    }
+
+    .lowOrHi {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <h1>Number guessing game</h1>
+    <p>Try and guess a random number between 1 and 100.</p>
+    <p>You have 10 attempts to guess the right number.</p>
+
+    <form class="form">
+      <label for="guessField" id="guess">Guess a number</label><br/>
+      <input type="text" id="guessField" class="guessField"><br/>
+      <input type="submit" id="subt" value="Submit guess" class="guessSubmit">
+    </form>
+
+    <div class="resultParas">
+      <p>Previous Guesses: <span class="guesses"></span></p>
+      <p>Guesses Remaining: <span class="lastResult">10</span></p>
+      <p class="lowOrHi"></p>
+    </div>
+  </div>
+
+  <script>
+    const randomNumber = parseInt(Math.random() * 100 + 1);
+
+    const submit = document.querySelector('#guess');
+    const userInput = document.querySelector('#guessField');
+    const guessSlot = document.querySelector('.guesses');
+    const remaining = document.querySelector('.lastResult');
+    const lowOrHi = document.querySelector('.lowOrHi');
+    const startOver = document.querySelector('.resultParas');
+
+    const p = document.childElement('p');
+
+    let prevGuess = [];
+    let numGuess = 1;
+
+    let playGame = true;
+  </script>
+</body>
+</html>
